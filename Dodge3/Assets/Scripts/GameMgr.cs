@@ -2,17 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMgr : MonoBehaviour
+public class GameMgr
 {
-    // Start is called before the first frame update
-    void Start()
+    static GameMgr _instance = null;
+
+    public static GameMgr Inst
     {
-        
+        get
+        {
+            if (_instance == null)
+                _instance = new GameMgr();
+
+            return _instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    public GameInfo m_GameInfo = new GameInfo();
+    public SaveInfo m_SaveInfo = new SaveInfo();
+    public GameScene m_GameScene = null;
+
+
+    public void Initialize()
     {
-        
+        Application.runInBackground = true;
+    }
+
+    public void OnUpdate(float fElasedTime)
+    {
+        m_GameInfo.OnUpdate(fElasedTime);
+    }
+
+    public void SetGameScene(GameScene kGameScene)
+    {
+        m_GameScene = kGameScene;
+    }
+
+    public GameScene GetGameScene() 
+    { 
+        return m_GameScene; 
+    }
+
+    public void InitStart()
+    {
+        m_GameInfo.Initialize();
+    }
+
+    public void SaveFile()
+    {
+        m_SaveInfo.SaveFile();
+    }
+
+    public void LoadFile()
+    {
+        m_SaveInfo.LoadFile();
     }
 }

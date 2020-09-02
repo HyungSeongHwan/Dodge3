@@ -2,17 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CAsset : MonoBehaviour
+public class CAsset
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int m_Id = 0;
 }

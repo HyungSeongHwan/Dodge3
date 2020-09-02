@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Config : MonoBehaviour
+public class Config
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public const int DMAX_SCORE = 1000;
+    public const int DMIN_SCORE = 10;
+    public const int DMIN_ADD_HP = 4;
 }
